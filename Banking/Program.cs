@@ -62,9 +62,7 @@ namespace Banking
 								if (dohod*12 > 720000)
 									// проверка суммы кредита
 									if (sum < 3000000+depositCost)
-                                    {
 										credit = true;
-                                    }
 					else if (gen.ToString().ToLower() == "ж")
 						// проверка возраста
 						if (age >= 18 && age < 58)
@@ -74,9 +72,7 @@ namespace Banking
 								if (dohod * 12 > 720000)
 									// проверка суммы кредита
 									if (sum < 3000000 + depositCost)
-									{
 										credit = true;
-									}
 				}
 				else if (status.ToString().ToLower() == "ю")
 					if (creditForm.ToString().ToLower() == "б")
@@ -88,9 +84,7 @@ namespace Banking
 								if (dohod * 12 > 3000000)
 									// сумма кредита
 									if (sum < 30000000 + depositCost)
-									{
 										credit = true;
-									}
 			}
 			if (credit)
                 Console.WriteLine("ОДОБРЕНО");
