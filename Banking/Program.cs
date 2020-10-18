@@ -53,35 +53,23 @@ namespace Banking
 				if (status.ToString().ToLower() == "ф")
 				{
 					// проверка на пол
-					if (gen.ToString().ToLower() == "м")
-						// проверка возраста
-						if (age >= 18 && age < 63) 
-							// проврка стажа
-							if (exp >= 2)
-								// проверка дохда 
-								if (dohod*12 > 720000)
-									// проверка суммы кредита
-									if (sum < 3000000+depositCost)
-										credit = true;
-					else if (gen.ToString().ToLower() == "ж")
-						// проверка возраста
-						if (age >= 18 && age < 58)
-							// проврка стажа
-							if (exp >= 2)
-								// проверка дохда 
-								if (dohod * 12 > 720000)
-									// проверка суммы кредита
-									if (sum < 3000000 + depositCost)
-										credit = true;
+					if ((gen.ToString().ToLower() == "м" && age < 63 && age > 18) || (gen.ToString().ToLower() == "ж" && age < 58 && age > 18))
+						// проврка стажа
+						if (exp >= 2)
+							// проверка дохда 
+							if (dohod * 12 >= 720000)
+								// проверка суммы кредита
+								if (sum <= 3000000+depositCost)
+									credit = true;
 				}
 				else if (status.ToString().ToLower() == "ю")
 					if (creditForm.ToString().ToLower() == "б")
 						// возраст
-						if (age < 63)
+						if ((gen.ToString().ToLower() == "м" && age < 63) || (gen.ToString().ToLower() == "ж" && age < 58))
 							// стаж
 							if (exp >= 5)
 								// доход
-								if (dohod * 12 > 3000000)
+								if (dohod * 12 >= 3000000)
 									// сумма кредита
 									if (sum < 30000000 + depositCost)
 										credit = true;
