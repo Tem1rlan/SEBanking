@@ -23,12 +23,9 @@ namespace Banking
 
 			Console.Write("Введите свой статус (ф, если физический, ю, если юридический): ");
 			char status = Convert.ToChar(Console.ReadLine()); // Юридический статус (физ.лицо или юр.лицо);
-			char creditForm = 'б';
-			if (status.ToString().ToLower() == "ф")
-            {
-				Console.Write("В какой форме вы хотите получить кредит?(н, если наличными, б, если безналичными) ");
-				creditForm = Convert.ToChar(Console.ReadLine()); // Форма выдачи кредита (нал или безнал);
-			}
+			
+			Console.Write("В какой форме вы хотите получить кредит?(н, если наличными, б, если безналичными) ");
+			char creditForm = Convert.ToChar(Console.ReadLine()); // Форма выдачи кредита (нал или безнал);
 
 			Console.Write("Сколько кредитов вы просрочили? ");
 			int overCredits = Convert.ToInt32(Console.ReadLine()); // Количество просроченных кредитов;
